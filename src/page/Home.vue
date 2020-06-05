@@ -8,7 +8,7 @@
             </b-navbar-brand>
             <b-navbar-toggle target="nav-collapse" id="navbar-toggler"></b-navbar-toggle>
             <b-collapse class="navbar-items" id="nav-collapse" is-nav>
-                <b-navbar-nav class="navbar-nav">
+                <b-navbar-nav class="navbar-nav ml-auto">
                     <b-nav-item class="nav-item nav-secondary ml-3 mr-3 pr-1 pl-1" href="/#about">
                         <a class="nav-link nav-secondary-link">About Me</a>
                     </b-nav-item>
@@ -61,7 +61,6 @@
                 } else {
                     this.scrolled_toolbar = '#navigation';
                 }
-                this.onScroll();
             },
         },
     }
@@ -106,10 +105,6 @@
         background: #ffe01b;
         padding: 15px 40px 15px 40px;
         box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25);
-    }
-
-    .navbar-items {
-        justify-content: end;
     }
 
     .nav-link {

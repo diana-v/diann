@@ -141,8 +141,6 @@
     .fa-github, .fa-linkedin {
         color: #ffe01b;
         font-size: 40px;
-        vertical-align: middle;
-        display: ruby-base;
-        padding: 0 20px;
+        padding: 10px 20px;
     }
 </style>
