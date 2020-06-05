@@ -4,12 +4,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="../assets/services-plan.svg" class="service-image"/>
+                    <img src="../assets/services-plan.svg" class="service-image" alt="Girl pinning items to a board"/>
                     <h3 class="service-title">1. Refine ideas</h3>
                     <p class="service-description">Together we will transform your ideas into realistic plans with a concrete roadmap of how we'll get there.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="../assets/services-development.svg" class="service-image"/>
+                    <img src="../assets/services-development.svg" class="service-image" alt="Person coding in HTML/CSS"/>
                     <h3 class="service-title">2. Web Development</h3>
                     <p class="service-description">Custom designed solutions for mobile-friendly websites that are
                         functional and engaging to your end-user, as well as effective at conveying your business
@@ -17,7 +17,7 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <img src="../assets/services-seo.svg" class="service-image"/>
+                    <img src="../assets/services-seo.svg" class="service-image" alt="Girl carrying a magnifying glass"/>
                     <h3 class="service-title">3. SEO Optimisation</h3>
                     <p class="service-description">Keeping the latest SEO tools and requirements in mind, your website
                         will be optimised to ensure it is visible to who matters most.</p>

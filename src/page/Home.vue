@@ -3,8 +3,8 @@
     <div id="home">
         <b-navbar id="navigation" fixed="top" toggleable="md" v-bind:class="scrolled_toolbar">
             <b-navbar-brand class="navbar-brand" href="/#home">
-                <img src="../assets/logo.png" class="brand-logo"/>
-                <img src="../assets/name.png" class="brand-name"/>
+                <img src="../assets/logo.png" class="brand-logo" alt="Diann Logo"/>
+                <img src="../assets/name.png" class="brand-name" alt="Diann"/>
             </b-navbar-brand>
             <b-navbar-toggle target="nav-collapse" id="navbar-toggler"></b-navbar-toggle>
             <b-collapse class="navbar-items" id="nav-collapse" is-nav>

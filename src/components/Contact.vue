@@ -53,13 +53,13 @@
                     </div>
                 </div>
                 <div class="col-xl-5">
-                    <img class="contact-image" src="../assets/contact-time.svg"/>
+                    <img class="contact-image" src="../assets/contact-time.svg" alt="Girl with an hourglass"/>
                 </div>
             </div>
         </div>
         <div class="social-container">
-            <a href="https://github.com/diana-v" target=”_blank”><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/diana-valaityte/" target=”_blank”><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/diana-v" target=”_blank”><font-awesome-icon :icon="['fab', 'github']" class="icon" alt="Github"/></a>
+            <a href="https://www.linkedin.com/in/diana-valaityte/" target=”_blank”><font-awesome-icon :icon="['fab', 'linkedin']" class="icon" alt="LinkedIn"/></a>
         </div>
     </div>
 </template>
@@ -138,9 +138,16 @@
         height: 60px;
     }
 
-    .fa-github, .fa-linkedin {
+    .icon {
         color: #ffe01b;
-        font-size: 40px;
+        font-size: 60px;
         padding: 10px 20px;
+    }
+
+    .svg-inline--fa.fa-w-16 {
+        width: 2em !important;
+    }
+    .svg-inline--fa.fa-w-14 {
+        width: 2em !important;
     }
 </style>

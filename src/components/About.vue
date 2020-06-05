@@ -8,7 +8,7 @@
                 unforgettable digital presence.</p>
             <div class="vector-layout">
                 <div class="vector-container">
-                    <img src="../assets/about-vector.svg" class="about-vector"/>
+                    <img src="../assets/about-vector.svg" class="about-vector" alt="Girl painting a website"/>
                 </div>
             </div>
         </div>
