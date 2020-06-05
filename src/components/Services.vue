@@ -84,7 +84,8 @@
 
     @media screen and (max-width: 600px) {
         .service-header {
-            font-size: 2.5rem;
+            font-size: 2rem;
+            margin-bottom: 30px;
         }
 
         .service-title {

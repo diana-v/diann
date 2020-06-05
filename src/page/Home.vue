@@ -99,7 +99,7 @@
     /* NAVIGATION */
     #navigation {
         background: #ffe01b;
-        padding: 15px 40px 15px 40px;
+        padding: 15px 40px 15px 40px !important;
     }
 
     .toolbar-scrolled {
@@ -164,5 +164,11 @@
 
     .brand-name {
         height: 30px;
+    }
+
+    @media screen and (max-width: 767px) {
+        #navigation {
+            padding: 5px 30px 5px 30px;
+        }
     }
 </style>
