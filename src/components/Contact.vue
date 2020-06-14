@@ -56,9 +56,9 @@
                                 <div class="border">
                                     <b-button type="submit" class="contact-primary contact-button">Submit
                                     </b-button>
-                                    <b-modal id="modal-success" text-center ok-only centered hide-header
+                                    <b-modal id="modal-submit" text-center ok-only centered hide-header
                                              ok-variant="dark" footer-border-variant="0">
-                                        <p class="my-3 text-center">Message Received! I'll respond within 24h</p>
+                                        <p class="my-3 text-center">{{modal_text}}</p>
                                     </b-modal>
                                 </div>
                             </div>
@@ -94,6 +94,7 @@
                     name: '',
                     text: ''
                 },
+                modal_text: "Message Received! I'll respond within 24h"
             }
         },
         validations: {
@@ -122,8 +123,18 @@
                 if (this.$v.form.$anyError) {
                     return;
                 }
-
-                this.$bvModal.show("modal-success")
+                this.$http.post(this.$contact_url, {
+                    name: this.form.name,
+                    email: this.form.email,
+                    text: this.form.text})
+                    .then(()=> {
+                        this.modal_text = "Message Received! I'll respond within 24h"
+                        this.$bvModal.show("modal-submit")
+                    })
+                    .catch(()=> {
+                        this.modal_text = "An error occurred. Please try again later."
+                        this.$bvModal.show("modal-submit")
+                    })
             }
         }
     }
@@ -155,6 +166,7 @@
         align-content: center;
         display: grid;
         justify-content: center;
+        padding-bottom: 20px;
     }
 
     .contact-primary {

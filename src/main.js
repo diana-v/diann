@@ -17,6 +17,8 @@ import Error from './page/Error.vue'
 
 import Vuelidate from 'vuelidate'
 
+import axios from 'axios'
+
 library.add(fas, faLinkedin, faGithub);
 
 Vue.use(BootstrapVue);
@@ -25,6 +27,8 @@ Vue.use(VueRouter);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;
 Vue.use(Vuelidate);
+Vue.prototype.$http = axios;
+Vue.prototype.$contact_url = process.env.VUE_APP_CONTACT_URL;
 
 const routes = [
     {
