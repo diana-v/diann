@@ -72,6 +72,7 @@
 
         .about-paragraph {
             font-size: 1.25rem;
+            font-weight: normal;
         }
         .vector-layout {
             display: none;

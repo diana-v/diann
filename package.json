@@ -16,7 +16,8 @@
     "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-router": "^3.3.2"
+    "vue-router": "^3.3.2",
+    "vuelidate": "^0.7.5"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.13.0",

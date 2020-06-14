@@ -5,14 +5,19 @@
             <div class="row">
                 <div class="col-xl-7 contact-form">
                     <div>
-                        <b-form @submit="onSubmit">
+                        <b-form @submit.stop.prevent="onSubmit">
                             <b-form-group id="input-group-1" label-for="input-1">
                                 <b-form-input
                                         id="input-1"
-                                        v-model="form.name"
-                                        required
+                                        v-model="$v.form.name.$model"
+                                        :state="validateState('name')"
+                                        aria-describedby="input-1-live-feedback"
                                         placeholder="Name"
                                 ></b-form-input>
+                                <b-form-invalid-feedback
+                                        id="input-1-live-feedback"
+                                >This is a required field and must be at least 3 characters.
+                                </b-form-invalid-feedback>
                             </b-form-group>
 
                             <b-form-group
@@ -22,31 +27,39 @@
                             >
                                 <b-form-input
                                         id="input-2"
-                                        v-model="form.email"
+                                        v-model="$v.form.email.$model"
+                                        :state="validateState('email')"
                                         type="email"
-                                        required
+                                        aria-describedby="input-2-live-feedback"
                                         placeholder="Email"
                                 ></b-form-input>
+                                <b-form-invalid-feedback id="input-2-live-feedback">Email address provided seems to be
+                                    invalid.
+                                </b-form-invalid-feedback>
                             </b-form-group>
 
 
                             <b-form-group id="input-group-3" label-for="input-3">
                                 <b-form-textarea
                                         id="textarea"
-                                        v-model="form.text"
+                                        v-model="$v.form.text.$model"
+                                        :state="validateState('text')"
+                                        aria-describedby="input-3-live-feedback"
                                         placeholder="Type your message..."
                                         rows="3"
                                         no-resize
                                 ></b-form-textarea>
+                                <b-form-invalid-feedback id="input-3-live-feedback">This is a required field.
+                                </b-form-invalid-feedback>
                             </b-form-group>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col button-submit">
-                                        <div class="border">
-                                            <b-button type="submit" class="contact-primary contact-button">Submit
-                                            </b-button>
-                                        </div>
-                                    </div>
+                            <div class="button-submit">
+                                <div class="border">
+                                    <b-button type="submit" class="contact-primary contact-button">Submit
+                                    </b-button>
+                                    <b-modal id="modal-success" text-center ok-only centered hide-header
+                                             ok-variant="dark" footer-border-variant="0">
+                                        <p class="my-3 text-center">Message Received! I'll respond within 24h</p>
+                                    </b-modal>
                                 </div>
                             </div>
                         </b-form>
@@ -58,14 +71,22 @@
             </div>
         </div>
         <div class="social-container">
-            <a href="https://github.com/diana-v" target=”_blank”><font-awesome-icon :icon="['fab', 'github']" class="icon" alt="Github"/></a>
-            <a href="https://www.linkedin.com/in/diana-valaityte/" target=”_blank”><font-awesome-icon :icon="['fab', 'linkedin']" class="icon" alt="LinkedIn"/></a>
+            <a href="https://github.com/diana-v" target=”_blank”>
+                <font-awesome-icon :icon="['fab', 'github']" class="icon" alt="Github"/>
+            </a>
+            <a href="https://www.linkedin.com/in/diana-valaityte/" target=”_blank”>
+                <font-awesome-icon :icon="['fab', 'linkedin']" class="icon" alt="LinkedIn"/>
+            </a>
         </div>
     </div>
 </template>
 <script>
+    import {validationMixin} from "vuelidate";
+    import {required, minLength, email} from "vuelidate/lib/validators";
+
     export default {
         name: 'Contact',
+        mixins: [validationMixin],
         data() {
             return {
                 form: {
@@ -75,11 +96,35 @@
                 },
             }
         },
+        validations: {
+            form: {
+                email: {
+                    required,
+                    email
+                },
+                name: {
+                    required,
+                    minLength: minLength(3)
+                },
+                text: {
+                    required
+                }
+            }
+        },
         methods: {
-            onSubmit(evt) {
-                evt.preventDefault()
-                alert(JSON.stringify(this.form))
+            validateState(name) {
+                const {$dirty, $error} = this.$v.form[name];
+                return $dirty ? !$error : null;
             },
+
+            onSubmit() {
+                this.$v.form.$touch();
+                if (this.$v.form.$anyError) {
+                    return;
+                }
+
+                this.$bvModal.show("modal-success")
+            }
         }
     }
 </script>
@@ -147,7 +192,29 @@
     .svg-inline--fa.fa-w-16 {
         width: 2em !important;
     }
+
     .svg-inline--fa.fa-w-14 {
         width: 2em !important;
     }
+
+    /* MODAL */
+    .modal-body {
+        padding: 1rem 1rem 0 1rem !important;
+    }
+
+    .modal-footer {
+        padding: 0 0.75rem 0.75rem 0.75rem !important;
+        justify-content: center;
+    }
+
+    .btn-dark {
+        background-color: black !important;
+        border-color: black !important;
+    }
+
+    .btn-dark:hover {
+        background-color: #f4d406 !important;
+        border-color: #f4d406 !important;
+    }
+
 </style>

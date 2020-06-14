@@ -15,6 +15,8 @@ import VueRouter from 'vue-router'
 import Home from './page/Home.vue'
 import Error from './page/Error.vue'
 
+import Vuelidate from 'vuelidate'
+
 library.add(fas, faLinkedin, faGithub);
 
 Vue.use(BootstrapVue);
@@ -22,6 +24,7 @@ Vue.use(IconsPlugin);
 Vue.use(VueRouter);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;
+Vue.use(Vuelidate);
 
 const routes = [
     {

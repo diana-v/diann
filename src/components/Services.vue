@@ -37,7 +37,6 @@
 
 <style>
     .services {
-        /*height: 70vh;*/
         background-color: white;
         position: inherit;
     }
