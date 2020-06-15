@@ -42,8 +42,8 @@
                             <b-form-group id="input-group-3" label-for="input-3">
                                 <b-form-textarea
                                         id="textarea"
-                                        v-model="$v.form.text.$model"
-                                        :state="validateState('text')"
+                                        v-model="$v.form.message.$model"
+                                        :state="validateState('message')"
                                         aria-describedby="input-3-live-feedback"
                                         placeholder="Type your message..."
                                         rows="3"
@@ -58,7 +58,7 @@
                                     </b-button>
                                     <b-modal id="modal-submit" text-center ok-only centered hide-header
                                              ok-variant="dark" footer-border-variant="0">
-                                        <p class="my-3 text-center">{{modal_text}}</p>
+                                        <p class="my-3 text-center">{{modal_message}}</p>
                                     </b-modal>
                                 </div>
                             </div>
@@ -92,9 +92,9 @@
                 form: {
                     email: '',
                     name: '',
-                    text: ''
+                    message: ''
                 },
-                modal_text: "Message Received! I'll respond within 24h"
+                modal_message: "Message Received! I'll respond within 24h"
             }
         },
         validations: {
@@ -107,7 +107,7 @@
                     required,
                     minLength: minLength(3)
                 },
-                text: {
+                message: {
                     required
                 }
             }
@@ -126,13 +126,13 @@
                 this.$http.post(this.$contact_url, {
                     name: this.form.name,
                     email: this.form.email,
-                    text: this.form.text})
+                    message: this.form.message})
                     .then(()=> {
-                        this.modal_text = "Message Received! I'll respond within 24h"
+                        this.modal_message = "Message Received! I'll respond within 24h"
                         this.$bvModal.show("modal-submit")
                     })
                     .catch(()=> {
-                        this.modal_text = "An error occurred. Please try again later."
+                        this.modal_message = "An error occurred. Please try again later."
                         this.$bvModal.show("modal-submit")
                     })
             }
