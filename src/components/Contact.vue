@@ -49,7 +49,7 @@
                                         rows="3"
                                         no-resize
                                 ></b-form-textarea>
-                                <b-form-invalid-feedback id="input-3-live-feedback">This is a required field.
+                                <b-form-invalid-feedback id="input-3-live-feedback">This is a required field and must be at least 10 characters long.
                                 </b-form-invalid-feedback>
                             </b-form-group>
                             <div class="button-submit">
@@ -108,7 +108,8 @@
                     minLength: minLength(3)
                 },
                 message: {
-                    required
+                    required,
+                    minLength: minLength(10)
                 }
             }
         },
@@ -222,11 +223,14 @@
     .btn-dark {
         background-color: black !important;
         border-color: black !important;
+        color: white;
+        box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25);
     }
 
     .btn-dark:hover {
         background-color: #f4d406 !important;
         border-color: #f4d406 !important;
+        color: black;
     }
 
 </style>
