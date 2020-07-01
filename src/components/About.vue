@@ -16,7 +16,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .about {
         padding-top: 15vh;
         background: linear-gradient(#ffe01b 77%, #ffffff 23%);

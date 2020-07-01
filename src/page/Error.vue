@@ -8,7 +8,7 @@
     </main>
 </template>
 
-<style>
+<style scoped>
     .error {
         background: white;
         height: 100vh;

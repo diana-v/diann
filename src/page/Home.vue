@@ -79,35 +79,7 @@
     }
 </script>
 
-<style>
-    html {
-        scroll-behavior: smooth !important;
-    }
-
-    h1 {
-        font-family: Montserrat, sans-serif;
-        letter-spacing: -2.5px;
-        color: black;
-    }
-
-    h2 {
-        font-family: Montserrat, sans-serif;
-        letter-spacing: -2.5px;
-        color: black;
-    }
-
-    h3 {
-        font-family: Montserrat, sans-serif;
-        letter-spacing: -1.5px;
-        color: black;
-    }
-
-    p {
-        font-family: Open-Sans, sans-serif;
-        font-weight: lighter;
-        color: black;
-    }
-
+<style scoped>
     /* NAVIGATION */
     #navigation {
         background: #ffe01b;
@@ -172,6 +144,7 @@
 
     .brand-name {
         height: 30px;
+        width: 100px;
     }
 
     @media screen and (max-width: 767px) {
