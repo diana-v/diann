@@ -7,13 +7,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
-import {fas} from '@fortawesome/free-solid-svg-icons'
 import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
 
-
 import VueRouter from 'vue-router'
-import Home from './page/Home.vue'
-import Error from './page/Error.vue'
+
 import(/* webpackPreload: true */ "./components/About")
 import(/* webpackPreload: true */ "./components/Services")
 import(/* webpackPreload: true */ "./components/Contact")
@@ -22,7 +19,7 @@ import Vuelidate from 'vuelidate'
 
 import axios from 'axios'
 
-library.add(fas, faLinkedin, faGithub);
+library.add(faLinkedin, faGithub);
 
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
@@ -37,7 +34,7 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        component: Home,
+        component: () => import(/* webpackPreload: true */ "./page/Home.vue"),
         meta: {
             title: 'Diann | Web Development',
             metaTags: [
@@ -63,7 +60,7 @@ const routes = [
     {
         path: '/*',
         name: 'Error',
-        component: Error,
+        component: () => import(/* webpackPreload: true */ "./page/Error.vue"),
     },
 ];
 
