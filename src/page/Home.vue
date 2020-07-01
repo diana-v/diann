@@ -14,11 +14,11 @@
                     <b-nav-item class="nav-item nav-secondary ml-3 mr-4 pr-1 pl-1" href="/#services">
                         <a class="nav-link nav-secondary-link">Services</a>
                     </b-nav-item>
-                    <div class="border">
+                    <li class="border">
                         <b-nav-item class="nav-item nav-primary pr-1 pl-1" href="/#contact">
                             <a class="nav-link nav-primary-link">Let's Chat</a>
                         </b-nav-item>
-                    </div>
+                    </li>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
@@ -140,7 +140,7 @@
         transform: translate(-.5rem, .5rem);
     }
 
-    div.border {
+    li.border {
         border: 2px solid #000000 !important;
         border-radius: .3rem !important;
     }

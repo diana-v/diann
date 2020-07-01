@@ -3,16 +3,18 @@
         <h2 class="contact-header">There's no time to waste, get in touch!</h2>
         <main class="container-xl contact-container">
             <div class="row">
-                <section class="col-xl-7 contact-form">
+                <section class="col-xl-7">
                     <b-form @submit.stop.prevent="onSubmit">
-                        <b-form-group id="input-group-1" label-for="input-1">
+                        <b-form-group
+                                id="input-group-1"
+                        >
+                            <label class="form-label" label-for="input-1">Name:</label>
                             <b-form-input
                                     id="input-1"
                                     v-model="$v.form.name.$model"
                                     :state="validateState('name')"
                                     aria-describedby="input-1-live-feedback"
-                                    placeholder="Name"
-                                    label="Name"
+                                    placeholder="First name"
                             ></b-form-input>
                             <b-form-invalid-feedback
                                     id="input-1-live-feedback"
@@ -21,18 +23,16 @@
                         </b-form-group>
 
                         <b-form-group
-                                class="form-label"
                                 id="input-group-2"
-                                label-for="input-2"
                         >
+                            <label class="form-label" label-for="input-2">Email:</label>
                             <b-form-input
                                     id="input-2"
                                     v-model="$v.form.email.$model"
                                     :state="validateState('email')"
                                     type="email"
                                     aria-describedby="input-2-live-feedback"
-                                    placeholder="Email"
-                                    label="Email"
+                                    placeholder="example@example.com"
                             ></b-form-input>
                             <b-form-invalid-feedback id="input-2-live-feedback">Email address provided seems to be
                                 invalid.
@@ -42,15 +42,14 @@
 
                         <b-form-group
                                 id="input-group-3"
-                                label-for="input-3"
                         >
+                            <label class="form-label" label-for="input-3">Message:</label>
                             <b-form-textarea
                                     id="textarea"
                                     v-model="$v.form.message.$model"
                                     :state="validateState('message')"
                                     aria-describedby="input-3-live-feedback"
-                                    placeholder="Type your message..."
-                                    label="Type your message..."
+                                    placeholder="Please type your message here..."
                                     rows="3"
                                     no-resize
                             ></b-form-textarea>
@@ -174,8 +173,11 @@
     }
 
     /* FORM */
-    .contact-form {
-        padding-top: 30px;
+    .form-label {
+        justify-content: start;
+        display: flex;
+        margin-left: 0.5rem;
+        margin-bottom: 0 !important
     }
 
     /* BUTTONS */
@@ -222,6 +224,7 @@
 
     .icon-label {
         color: #ffe01b;
+        font-size: 14px;
     }
 
     .svg-inline--fa.fa-w-16 {
