@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
-import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
+import {faLinkedin} from '@fortawesome/free-brands-svg-icons/faLinkedin'
+import {faGithub} from '@fortawesome/free-brands-svg-icons/faGithub'
 
 import VueRouter from 'vue-router'
 

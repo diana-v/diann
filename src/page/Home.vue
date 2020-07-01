@@ -31,20 +31,12 @@
 </template>
 
 <script>
-    import Vue from 'vue'
-    import { BNavbar, BNavbarBrand, BNavbarNav, BNavbarToggle} from 'bootstrap-vue/src/components/navbar'
-    import { BNav, BNavItem, BNavItemDropdown, BNavText, BNavForm} from 'bootstrap-vue/src/components/nav'
-    import { BCollapse } from 'bootstrap-vue/src/components/collapse';
-    Vue.component('b-navbar', BNavbar);
-    Vue.component('b-navbar-brand', BNavbarBrand);
-    Vue.component('b-navbar-nav', BNavbarNav);
-    Vue.component('b-navbar-toggle', BNavbarToggle);
-    Vue.component('b-nav', BNav);
-    Vue.component('b-nav-item', BNavItem);
-    Vue.component('b-nav-item-dropdown', BNavItemDropdown);
-    Vue.component('b-nav-text', BNavText);
-    Vue.component('b-nav-form', BNavForm);
-    Vue.component('b-collapse', BCollapse);
+    import {BNavbar} from 'bootstrap-vue/src/components/navbar/navbar'
+    import {BNavbarBrand} from 'bootstrap-vue/src/components/navbar/navbar-brand'
+    import {BNavbarNav} from 'bootstrap-vue/src/components/navbar/navbar-nav'
+    import {BNavbarToggle} from 'bootstrap-vue/src/components/navbar/navbar-toggle'
+    import {BNavItem} from 'bootstrap-vue/src/components/nav/nav-item'
+    import {BCollapse} from 'bootstrap-vue/src/components/collapse/collapse';
 
     const About = () => import(/* webpackPreload: true */ '../components/About.vue');
     const Services = () => import(/* webpackPreload: true */ '../components/Services.vue');
@@ -54,7 +46,13 @@
         components: {
             About,
             Services,
-            Contact
+            Contact,
+            BNavbar,
+            BNavbarBrand,
+            BNavbarNav,
+            BNavbarToggle,
+            BNavItem,
+            BCollapse
         },
         data() {
             return {
