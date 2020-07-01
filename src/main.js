@@ -29,7 +29,7 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        component: () => import(/* webpackPreload: true */ "./page/Home.vue"),
+        component: () => import("./page/Home.vue"),
         meta: {
             title: 'Diann | Web Development',
             metaTags: [
@@ -55,7 +55,7 @@ const routes = [
     {
         path: '/*',
         name: 'Error',
-        component: () => import(/* webpackPreload: true */ "./page/Error.vue"),
+        component: () => import("./page/Error.vue"),
     },
 ];
 
