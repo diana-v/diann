@@ -1,10 +1,9 @@
 <template>
-<div>
-    <nav id="home">
+<main id="home">
         <b-navbar id="navigation" fixed="top" toggleable="md" v-bind:class="scrolled_toolbar">
             <b-navbar-brand class="navbar-brand" href="/#home">
-                <img src="../assets/logo.png" class="brand-logo" alt="Diann Logo"/>
-                <img src="../assets/name.png" class="brand-name" alt="Diann"/>
+                <img src="../assets/logo.svg" class="brand-logo" width="40" height="40" alt="Diann Logo"/>
+                <img src="../assets/name.svg" class="brand-name" height="30" width="100" alt="Diann"/>
             </b-navbar-brand>
             <b-navbar-toggle target="nav-collapse" id="navbar-toggler"></b-navbar-toggle>
             <b-collapse class="navbar-items" id="nav-collapse" is-nav>
@@ -23,11 +22,10 @@
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
-    </nav>
     <About id="about"></About>
     <Services id="services"></Services>
     <Contact id="contact"></Contact>
-</div>
+</main>
 </template>
 
 <script>

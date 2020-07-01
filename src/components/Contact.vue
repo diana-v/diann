@@ -12,6 +12,7 @@
                                     :state="validateState('name')"
                                     aria-describedby="input-1-live-feedback"
                                     placeholder="Name"
+                                    label="Name"
                             ></b-form-input>
                             <b-form-invalid-feedback
                                     id="input-1-live-feedback"
@@ -31,6 +32,7 @@
                                     type="email"
                                     aria-describedby="input-2-live-feedback"
                                     placeholder="Email"
+                                    label="Email"
                             ></b-form-input>
                             <b-form-invalid-feedback id="input-2-live-feedback">Email address provided seems to be
                                 invalid.
@@ -38,13 +40,17 @@
                         </b-form-group>
 
 
-                        <b-form-group id="input-group-3" label-for="input-3">
+                        <b-form-group
+                                id="input-group-3"
+                                label-for="input-3"
+                        >
                             <b-form-textarea
                                     id="textarea"
                                     v-model="$v.form.message.$model"
                                     :state="validateState('message')"
                                     aria-describedby="input-3-live-feedback"
                                     placeholder="Type your message..."
+                                    label="Type your message..."
                                     rows="3"
                                     no-resize
                             ></b-form-textarea>
@@ -71,12 +77,18 @@
         </main>
 
         <footer class="social-container">
-            <a href="https://github.com/diana-v" target=”_blank”>
-                <font-awesome-icon :icon="['fab', 'github']" class="icon" alt="Github"/>
-            </a>
-            <a href="https://www.linkedin.com/in/diana-valaityte/" target=”_blank”>
-                <font-awesome-icon :icon="['fab', 'linkedin']" class="icon" alt="LinkedIn"/>
-            </a>
+            <figure>
+                <a href="https://github.com/diana-v" target=”_blank”>
+                    <font-awesome-icon :icon="['fab', 'github']" class="icon" alt="Github"/>
+                    <figcaption class="icon-label">Github</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a href="https://www.linkedin.com/in/diana-valaityte/" target=”_blank”>
+                    <font-awesome-icon :icon="['fab', 'linkedin']" class="icon" alt="LinkedIn"/>
+                    <figcaption class="icon-label">LinkedIn</figcaption>
+                </a>
+            </figure>
         </footer>
     </div>
 </template>
@@ -143,6 +155,9 @@
 </script>
 
 <style>
+    a {
+        text-decoration: none !important;
+    }
     .contact {
         background-color: #ffe01b;
     }
@@ -194,13 +209,19 @@
     /* SOCIAL */
     .social-container {
         background-color: black;
-        height: 60px;
+        height: 90px;
+        justify-content: center;
+        display: flex;
     }
 
     .icon {
         color: #ffe01b;
         font-size: 60px;
-        padding: 10px 20px;
+        padding: 10px 20px 5px 20px;
+    }
+
+    .icon-label {
+        color: #ffe01b;
     }
 
     .svg-inline--fa.fa-w-16 {
