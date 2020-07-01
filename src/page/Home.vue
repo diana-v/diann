@@ -1,5 +1,5 @@
 <template>
-<main id="home">
+    <main id="home">
         <b-navbar id="navigation" fixed="top" toggleable="md" v-bind:class="scrolled_toolbar">
             <b-navbar-brand class="navbar-brand" href="/#home">
                 <img src="../assets/logo.svg" class="brand-logo" width="40" height="40" alt="Diann Logo"/>
@@ -14,24 +14,26 @@
                     <b-nav-item class="nav-item nav-secondary ml-3 mr-4 pr-1 pl-1" href="/#services">
                         <a class="nav-link nav-secondary-link">Services</a>
                     </b-nav-item>
-                    <li class="border">
-                        <div class="nav-item nav-primary pr-1 pl-1" href="/#contact">
-                            <a class="nav-link nav-primary-link">Let's Chat</a>
+                    <b-nav-item href="/#contact">
+                        <div id="border">
+                            <div class="nav-item nav-primary pr-1 pl-1">
+                                <a class="nav-link nav-primary-link">Let's Chat</a>
+                            </div>
                         </div>
-                    </li>
+                    </b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
-    <About id="about"></About>
-    <Services id="services"></Services>
-    <Contact id="contact"></Contact>
-</main>
+        <About id="about"></About>
+        <Services id="services"></Services>
+        <Contact id="contact"></Contact>
+    </main>
 </template>
 
 <script>
-    import About from '../components/About.vue'
-    import Services from '../components/Services.vue'
-    import Contact from '../components/Contact.vue'
+    const About = () => import('../components/About.vue');
+    const Services = () => import('../components/Services.vue');
+    const Contact = () => import('../components/Contact.vue');
 
     export default {
         components: {
@@ -140,7 +142,7 @@
         transform: translate(-.5rem, .5rem);
     }
 
-    li.border {
+    #border {
         border: 2px solid #000000 !important;
         border-radius: .3rem !important;
     }
