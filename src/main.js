@@ -10,11 +10,6 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
 
 import VueRouter from 'vue-router'
-
-import(/* webpackPreload: true */ "./components/About")
-import(/* webpackPreload: true */ "./components/Services")
-import(/* webpackPreload: true */ "./components/Contact")
-
 import Vuelidate from 'vuelidate'
 
 import axios from 'axios'

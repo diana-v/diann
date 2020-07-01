@@ -31,9 +31,9 @@
 </template>
 
 <script>
-    const About = () => import('../components/About.vue');
-    const Services = () => import('../components/Services.vue');
-    const Contact = () => import('../components/Contact.vue');
+    const About = () => import(/* webpackPreload: true */ '../components/About.vue');
+    const Services = () => import(/* webpackPreload: true */ '../components/Services.vue');
+    const Contact = () => import(/* webpackPreload: true */ '../components/Contact.vue');
 
     export default {
         components: {
