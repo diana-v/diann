@@ -1,83 +1,83 @@
 <template>
     <div class="contact">
         <h2 class="contact-header">There's no time to waste, get in touch!</h2>
-        <div class="container-xl contact-container">
+        <main class="container-xl contact-container">
             <div class="row">
-                <div class="col-xl-7 contact-form">
-                    <div>
-                        <b-form @submit.stop.prevent="onSubmit">
-                            <b-form-group id="input-group-1" label-for="input-1">
-                                <b-form-input
-                                        id="input-1"
-                                        v-model="$v.form.name.$model"
-                                        :state="validateState('name')"
-                                        aria-describedby="input-1-live-feedback"
-                                        placeholder="Name"
-                                ></b-form-input>
-                                <b-form-invalid-feedback
-                                        id="input-1-live-feedback"
-                                >This is a required field and must be at least 3 characters.
-                                </b-form-invalid-feedback>
-                            </b-form-group>
+                <section class="col-xl-7 contact-form">
+                    <b-form @submit.stop.prevent="onSubmit">
+                        <b-form-group id="input-group-1" label-for="input-1">
+                            <b-form-input
+                                    id="input-1"
+                                    v-model="$v.form.name.$model"
+                                    :state="validateState('name')"
+                                    aria-describedby="input-1-live-feedback"
+                                    placeholder="Name"
+                            ></b-form-input>
+                            <b-form-invalid-feedback
+                                    id="input-1-live-feedback"
+                            >This is a required field and must be at least 3 characters.
+                            </b-form-invalid-feedback>
+                        </b-form-group>
 
-                            <b-form-group
-                                    class="form-label"
-                                    id="input-group-2"
-                                    label-for="input-2"
-                            >
-                                <b-form-input
-                                        id="input-2"
-                                        v-model="$v.form.email.$model"
-                                        :state="validateState('email')"
-                                        type="email"
-                                        aria-describedby="input-2-live-feedback"
-                                        placeholder="Email"
-                                ></b-form-input>
-                                <b-form-invalid-feedback id="input-2-live-feedback">Email address provided seems to be
-                                    invalid.
-                                </b-form-invalid-feedback>
-                            </b-form-group>
+                        <b-form-group
+                                class="form-label"
+                                id="input-group-2"
+                                label-for="input-2"
+                        >
+                            <b-form-input
+                                    id="input-2"
+                                    v-model="$v.form.email.$model"
+                                    :state="validateState('email')"
+                                    type="email"
+                                    aria-describedby="input-2-live-feedback"
+                                    placeholder="Email"
+                            ></b-form-input>
+                            <b-form-invalid-feedback id="input-2-live-feedback">Email address provided seems to be
+                                invalid.
+                            </b-form-invalid-feedback>
+                        </b-form-group>
 
 
-                            <b-form-group id="input-group-3" label-for="input-3">
-                                <b-form-textarea
-                                        id="textarea"
-                                        v-model="$v.form.message.$model"
-                                        :state="validateState('message')"
-                                        aria-describedby="input-3-live-feedback"
-                                        placeholder="Type your message..."
-                                        rows="3"
-                                        no-resize
-                                ></b-form-textarea>
-                                <b-form-invalid-feedback id="input-3-live-feedback">This is a required field and must be at least 10 characters long.
-                                </b-form-invalid-feedback>
-                            </b-form-group>
-                            <div class="button-submit">
-                                <div class="border">
-                                    <b-button type="submit" class="contact-primary contact-button">Submit
-                                    </b-button>
-                                    <b-modal id="modal-submit" text-center ok-only centered hide-header
-                                             ok-variant="dark" footer-border-variant="0">
-                                        <p class="my-3 text-center">{{modal_message}}</p>
-                                    </b-modal>
-                                </div>
+                        <b-form-group id="input-group-3" label-for="input-3">
+                            <b-form-textarea
+                                    id="textarea"
+                                    v-model="$v.form.message.$model"
+                                    :state="validateState('message')"
+                                    aria-describedby="input-3-live-feedback"
+                                    placeholder="Type your message..."
+                                    rows="3"
+                                    no-resize
+                            ></b-form-textarea>
+                            <b-form-invalid-feedback id="input-3-live-feedback">This is a required field and must be at
+                                least 10 characters long.
+                            </b-form-invalid-feedback>
+                        </b-form-group>
+                        <div class="button-submit">
+                            <div class="border">
+                                <b-button type="submit" class="contact-primary contact-button">Submit
+                                </b-button>
+                                <b-modal id="modal-submit" text-center ok-only centered hide-header
+                                         ok-variant="dark" footer-border-variant="0">
+                                    <p class="my-3 text-center">{{modal_message}}</p>
+                                </b-modal>
                             </div>
-                        </b-form>
-                    </div>
-                </div>
-                <div class="col-xl-5">
+                        </div>
+                    </b-form>
+                </section>
+                <figure class="col-xl-5">
                     <img class="contact-image" src="../assets/contact-time.svg" alt="Girl with an hourglass"/>
-                </div>
+                </figure>
             </div>
-        </div>
-        <div class="social-container">
+        </main>
+
+        <footer class="social-container">
             <a href="https://github.com/diana-v" target=”_blank”>
                 <font-awesome-icon :icon="['fab', 'github']" class="icon" alt="Github"/>
             </a>
             <a href="https://www.linkedin.com/in/diana-valaityte/" target=”_blank”>
                 <font-awesome-icon :icon="['fab', 'linkedin']" class="icon" alt="LinkedIn"/>
             </a>
-        </div>
+        </footer>
     </div>
 </template>
 <script>
@@ -127,12 +127,13 @@
                 this.$http.post(this.$contact_url, {
                     name: this.form.name,
                     email: this.form.email,
-                    message: this.form.message})
-                    .then(()=> {
+                    message: this.form.message
+                })
+                    .then(() => {
                         this.modal_message = "Message Received! I'll respond within 24h"
                         this.$bvModal.show("modal-submit")
                     })
-                    .catch(()=> {
+                    .catch(() => {
                         this.modal_message = "An error occurred. Please try again later."
                         this.$bvModal.show("modal-submit")
                     })

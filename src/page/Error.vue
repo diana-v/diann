@@ -1,11 +1,11 @@
 <template>
-    <div class="error">
-        <div class="error-content">
+    <main class="error">
+        <section class="error-content">
             <img src="../assets/error.svg" class="error-image"/>
             <h1 class="error-text">Error! The page you requested is not found.</h1>
             <a href="/" class="error-description">Back To Home</a>
-        </div>
-    </div>
+        </section>
+    </main>
 </template>
 
 <style>

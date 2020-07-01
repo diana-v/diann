@@ -1,18 +1,14 @@
 <template>
-    <div class="about">
-        <div class="about-content">
-            <h1 class="about-header">Design Inspiring Websites</h1>
-            <p class="about-paragraph">
-                Your idea is not based on a template, so why should your website be? I design custom websites for
-                businesses and individuals who wish to promote their products or services, build their brand and have an
-                unforgettable digital presence.</p>
-            <div class="vector-layout">
-                <div class="vector-container">
-                    <img src="../assets/about-vector.svg" class="about-vector" alt="Girl painting a website"/>
-                </div>
-            </div>
-        </div>
-    </div>
+    <section class="about about-content">
+        <h1 class="about-header">Design Inspiring Websites</h1>
+        <p class="about-paragraph">
+            Your idea is not based on a template, so why should your website be? I design custom websites for
+            businesses and individuals who wish to promote their products or services, build their brand and have an
+            unforgettable digital presence.</p>
+        <figure class="vector-layout vector-container">
+            <img src="../assets/about-vector.svg" class="about-vector" alt="Girl painting a website"/>
+        </figure>
+    </section>
 </template>
 <script>
     export default {
@@ -74,9 +70,11 @@
             font-size: 1.25rem;
             font-weight: normal;
         }
+
         .vector-layout {
             display: none;
         }
+
         .about {
             background: #ffe01b;
             padding-bottom: 60px;

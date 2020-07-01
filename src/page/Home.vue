@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div id="home">
+    <nav id="home">
         <b-navbar id="navigation" fixed="top" toggleable="md" v-bind:class="scrolled_toolbar">
             <b-navbar-brand class="navbar-brand" href="/#home">
                 <img src="../assets/logo.png" class="brand-logo" alt="Diann Logo"/>
@@ -23,7 +23,7 @@
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
-    </div>
+    </nav>
     <About id="about"></About>
     <Services id="services"></Services>
     <Contact id="contact"></Contact>
