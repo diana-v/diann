@@ -116,20 +116,6 @@
     Vue.component('b-modal', BModal);
     Vue.component('b-button', BButton);
 
-    // import { BForm, BFormInvalidFeedback, B} from 'bootstrap-vue/src/components/form'
-    // import { BNav, BNavItem, BNavItemDropdown, BNavText, BNavForm} from 'bootstrap-vue/src/components/nav'
-    // Vue.component('b-navbar', BNavbar);
-    // Vue.component('b-navbar-brand', BNavbarBrand);
-    // Vue.component('b-navbar-nav', BNavbarNav);
-    // Vue.component('b-navbar-toggle', BNavbarToggle);
-    // Vue.component('b-nav', BNav);
-    // Vue.component('b-nav-item', BNavItem);
-    // Vue.component('b-nav-item-dropdown', BNavItemDropdown);
-    // Vue.component('b-nav-text', BNavText);
-    // Vue.component('b-nav-form', BNavForm);
-
-
-
     export default {
         name: 'Contact',
         mixins: [validationMixin],

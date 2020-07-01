@@ -12,6 +12,10 @@ import VueRouter from 'vue-router'
 import Home from './page/Home.vue'
 import Error from './page/Error.vue'
 
+import(/* webpackPreload: true */ "./components/About")
+import(/* webpackPreload: true */ "./components/Services")
+import(/* webpackPreload: true */ "./components/Contact")
+
 import Vuelidate from 'vuelidate'
 
 import axios from 'axios'
