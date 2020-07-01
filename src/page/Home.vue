@@ -31,6 +31,13 @@
 </template>
 
 <script>
+    import {BNavbar} from 'bootstrap-vue/src/components/navbar/navbar'
+    import {BNavbarBrand} from 'bootstrap-vue/src/components/navbar/navbar-brand'
+    import {BNavbarNav} from 'bootstrap-vue/src/components/navbar/navbar-nav'
+    import {BNavbarToggle} from 'bootstrap-vue/src/components/navbar/navbar-toggle'
+    import {BNavItem} from 'bootstrap-vue/src/components/nav/nav-item'
+    import {BCollapse} from 'bootstrap-vue/src/components/collapse/collapse';
+
     const About = () => import(/* webpackPreload: true */ '../components/About.vue');
     const Services = () => import(/* webpackPreload: true */ '../components/Services.vue');
     const Contact = () => import(/* webpackPreload: true */ '../components/Contact.vue');
@@ -39,7 +46,13 @@
         components: {
             About,
             Services,
-            Contact
+            Contact,
+            BNavbar,
+            BNavbarBrand,
+            BNavbarNav,
+            BNavbarToggle,
+            BNavItem,
+            BCollapse
         },
         data() {
             return {
@@ -66,35 +79,7 @@
     }
 </script>
 
-<style>
-    html {
-        scroll-behavior: smooth !important;
-    }
-
-    h1 {
-        font-family: Montserrat, sans-serif;
-        letter-spacing: -2.5px;
-        color: black;
-    }
-
-    h2 {
-        font-family: Montserrat, sans-serif;
-        letter-spacing: -2.5px;
-        color: black;
-    }
-
-    h3 {
-        font-family: Montserrat, sans-serif;
-        letter-spacing: -1.5px;
-        color: black;
-    }
-
-    p {
-        font-family: Open-Sans, sans-serif;
-        font-weight: lighter;
-        color: black;
-    }
-
+<style scoped>
     /* NAVIGATION */
     #navigation {
         background: #ffe01b;
@@ -145,6 +130,7 @@
     #border {
         border: 2px solid #000000 !important;
         border-radius: .3rem !important;
+        min-width: 130px;
     }
 
     #navbar-toggler {
@@ -159,6 +145,7 @@
 
     .brand-name {
         height: 30px;
+        width: 100px;
     }
 
     @media screen and (max-width: 767px) {

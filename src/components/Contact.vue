@@ -100,8 +100,28 @@
 <script>
     import {validationMixin} from "vuelidate";
     import {required, minLength, email} from "vuelidate/lib/validators";
+    import {BForm} from 'bootstrap-vue/src/components/form/form';
+    import {BFormInvalidFeedback} from 'bootstrap-vue/src/components/form/form-invalid-feedback';
+    import {BFormTextarea} from 'bootstrap-vue/src/components/form-textarea/form-textarea';
+    import {BFormGroup} from 'bootstrap-vue/src/components/form-group/form-group';
+    import {BFormInput} from 'bootstrap-vue/src/components/form-input/form-input';
+    import {BModal} from 'bootstrap-vue/src/components/modal/modal';
+    import {BButton} from 'bootstrap-vue/src/components/button/button';
+    import {ModalPlugin} from 'bootstrap-vue/esm/components/modal/index';
 
     export default {
+        use: {
+            ModalPlugin
+        },
+        components: {
+            BForm,
+            BFormGroup,
+            BFormInput,
+            BFormTextarea,
+            BFormInvalidFeedback,
+            BButton,
+            BModal
+        },
         name: 'Contact',
         mixins: [validationMixin],
         data() {
@@ -163,6 +183,7 @@
     a {
         text-decoration: none !important;
     }
+
     .contact {
         background-color: #ffe01b;
     }
@@ -181,8 +202,8 @@
     /* FORM */
     .form-label > label {
         text-align: start;
-        padding-left: 0.5rem;
-        margin-bottom: 0 !important;
+        padding-left: 0.3rem;
+        margin-bottom: 0.3rem;
     }
 
     /* BUTTONS */

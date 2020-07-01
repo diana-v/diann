@@ -37,7 +37,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .services {
         background-color: white;
         position: inherit;

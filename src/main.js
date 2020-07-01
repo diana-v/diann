@@ -1,23 +1,28 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
-import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
+import {faLinkedin} from '@fortawesome/free-brands-svg-icons/faLinkedin'
+import {faGithub} from '@fortawesome/free-brands-svg-icons/faGithub'
 
 import VueRouter from 'vue-router'
+
+import Home from './page/Home.vue'
+import Error from './page/Error.vue'
+
+import(/* webpackPreload: true */ "./components/About")
+import(/* webpackPreload: true */ "./components/Services")
+import(/* webpackPreload: true */ "./components/Contact")
+
 import Vuelidate from 'vuelidate'
 
 import axios from 'axios'
 
 library.add(faLinkedin, faGithub);
 
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
 Vue.use(VueRouter);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;
@@ -29,7 +34,7 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        component: () => import(/* webpackPreload: true */ "./page/Home.vue"),
+        component: Home,
         meta: {
             title: 'Diann | Web Development',
             metaTags: [
@@ -55,7 +60,7 @@ const routes = [
     {
         path: '/*',
         name: 'Error',
-        component: () => import(/* webpackPreload: true */ "./page/Error.vue"),
+        component: Error,
     },
 ];
 
