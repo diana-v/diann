@@ -51,7 +51,7 @@
                                 label="Message:"
                         >
                             <b-form-textarea
-                                    id="textarea"
+                                    id="input-3"
                                     v-model="$v.form.message.$model"
                                     :state="validateState('message')"
                                     aria-describedby="input-3-live-feedback"
