@@ -130,6 +130,7 @@
     #border {
         border: 2px solid #000000 !important;
         border-radius: .3rem !important;
+        min-width: 130px;
     }
 
     #navbar-toggler {

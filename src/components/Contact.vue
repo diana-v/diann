@@ -179,7 +179,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     a {
         text-decoration: none !important;
     }
@@ -202,8 +202,8 @@
     /* FORM */
     .form-label > label {
         text-align: start;
-        padding-left: 0.5rem;
-        margin-bottom: 0 !important;
+        padding-left: 0.3rem;
+        margin-bottom: 0.3rem;
     }
 
     /* BUTTONS */
