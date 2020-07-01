@@ -14,6 +14,7 @@ import {faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
 import VueRouter from 'vue-router'
 import Home from './page/Home.vue'
 import Error from './page/Error.vue'
+import(/* webpackPreload: true */ "./components/About")
 
 import Vuelidate from 'vuelidate'
 
