@@ -15,9 +15,9 @@
                         <a class="nav-link nav-secondary-link">Services</a>
                     </b-nav-item>
                     <li class="border">
-                        <b-nav-item class="nav-item nav-primary pr-1 pl-1" href="/#contact">
+                        <div class="nav-item nav-primary pr-1 pl-1" href="/#contact">
                             <a class="nav-link nav-primary-link">Let's Chat</a>
-                        </b-nav-item>
+                        </div>
                     </li>
                 </b-navbar-nav>
             </b-collapse>

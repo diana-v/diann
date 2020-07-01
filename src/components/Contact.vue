@@ -6,9 +6,11 @@
                 <section class="col-xl-7">
                     <b-form @submit.stop.prevent="onSubmit">
                         <b-form-group
+                                class="form-label"
                                 id="input-group-1"
+                                label-for="input-1"
+                                label="Name:"
                         >
-                            <label class="form-label" label-for="input-1">Name:</label>
                             <b-form-input
                                     id="input-1"
                                     v-model="$v.form.name.$model"
@@ -24,8 +26,10 @@
 
                         <b-form-group
                                 id="input-group-2"
+                                class="form-label"
+                                label-for="input-2"
+                                label="Email:"
                         >
-                            <label class="form-label" label-for="input-2">Email:</label>
                             <b-form-input
                                     id="input-2"
                                     v-model="$v.form.email.$model"
@@ -42,8 +46,10 @@
 
                         <b-form-group
                                 id="input-group-3"
+                                class="form-label"
+                                label-for="input-3"
+                                label="Message:"
                         >
-                            <label class="form-label" label-for="input-3">Message:</label>
                             <b-form-textarea
                                     id="textarea"
                                     v-model="$v.form.message.$model"
@@ -173,11 +179,10 @@
     }
 
     /* FORM */
-    .form-label {
-        justify-content: start;
-        display: flex;
-        margin-left: 0.5rem;
-        margin-bottom: 0 !important
+    .form-label > label {
+        text-align: start;
+        padding-left: 0.5rem;
+        margin-bottom: 0 !important;
     }
 
     /* BUTTONS */
