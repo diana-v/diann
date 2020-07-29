@@ -2,7 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import {ModalPlugin} from 'bootstrap-vue/esm/components/modal/index';
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {faLinkedin} from '@fortawesome/free-brands-svg-icons/faLinkedin'
@@ -13,9 +15,9 @@ import VueRouter from 'vue-router'
 import Home from './page/Home.vue'
 import Error from './page/Error.vue'
 
-import(/* webpackPreload: true */ "./components/About")
-import(/* webpackPreload: true */ "./components/Services")
-import(/* webpackPreload: true */ "./components/Contact")
+import(/* webpackPreload: true */ "./components/About");
+import(/* webpackPreload: true */ "./components/Services");
+import(/* webpackPreload: true */ "./components/Contact");
 
 import Vuelidate from 'vuelidate'
 
@@ -23,6 +25,7 @@ import axios from 'axios'
 
 library.add(faLinkedin, faGithub);
 
+Vue.use(ModalPlugin);
 Vue.use(VueRouter);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;

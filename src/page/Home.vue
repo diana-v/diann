@@ -52,7 +52,8 @@
             BNavbarNav,
             BNavbarToggle,
             BNavItem,
-            BCollapse
+            BCollapse,
+
         },
         data() {
             return {

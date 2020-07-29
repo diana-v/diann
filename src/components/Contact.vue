@@ -107,12 +107,8 @@
     import {BFormInput} from 'bootstrap-vue/src/components/form-input/form-input';
     import {BModal} from 'bootstrap-vue/src/components/modal/modal';
     import {BButton} from 'bootstrap-vue/src/components/button/button';
-    import {ModalPlugin} from 'bootstrap-vue/esm/components/modal/index';
 
     export default {
-        use: {
-            ModalPlugin
-        },
         components: {
             BForm,
             BFormGroup,
