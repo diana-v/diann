@@ -1,4 +1,4 @@
-# diann-new
+# diann
 
 ## Project setup
 ```
